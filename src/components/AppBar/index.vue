@@ -3,7 +3,7 @@
     <v-app-bar-nav-icon variant="text" @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
     <v-toolbar-title>Movies</v-toolbar-title>
     <v-spacer></v-spacer>
-
+    <LangSwitcher />
   </v-app-bar>
   <v-navigation-drawer v-model="drawer" :permanent="!$vuetify.display.mobile" :temporary="$vuetify.display.mobile">
     <v-list>
