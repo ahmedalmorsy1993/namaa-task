@@ -1,0 +1,16 @@
+{
+  "validation": {
+    "email": "please enter a valid email",
+    "required": "This field is required",
+    "invalid_email": "Invalid Email",
+    "invalid_url": "Invalid Url",
+    "min": "This field must be at least %{min}",
+    "password_not_match": "Password miss match"
+  },
+  "table": {
+    "movie_title": "Movie Title",
+    "movie_year": "Movie Year",
+    "number_of_actors": "Number Of Actors",
+    "actions": "Actions"
+  }
+}
