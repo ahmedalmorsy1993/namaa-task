@@ -9,10 +9,19 @@ declare module 'vue' {
   export interface GlobalComponents {
     AppBar: typeof import('./components/AppBar/index.vue')['default']
     AppFooter: typeof import('./components/AppFooter.vue')['default']
+    Autocomplete: typeof import('./components/Fields/Autocomplete.vue')['default']
+    DatePicker: typeof import('./components/Fields/DatePicker.vue')['default']
+    FileUpload: typeof import('./components/Fields/FileUpload.vue')['default']
     HelloWorld: typeof import('./components/HelloWorld.vue')['default']
     LangSwitcher: typeof import('./components/AppBar/LangSwitcher.vue')['default']
+    MovieFormAction: typeof import('./components/MovieFormAction/index.vue')['default']
+    Radio: typeof import('./components/Fields/Radio.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    SelectField: typeof import('./components/Fields/SelectField.vue')['default']
+    Switcher: typeof import('./components/Fields/Switcher.vue')['default']
     Table: typeof import('./components/Table/index.vue')['default']
+    TextArea: typeof import('./components/Fields/TextArea.vue')['default']
+    TextField: typeof import('./components/Fields/TextField.vue')['default']
   }
 }

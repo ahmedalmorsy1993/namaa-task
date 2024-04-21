@@ -8,5 +8,12 @@
     "movie_year": "سنة اصدار الفيلم",
     "number_of_actors": "عدد الممثلين",
     "actions": "العمليات"
+  },
+  "heading": {
+    "edit_movie": "تعديل الفيلم",
+    "create_movie": "اضافة فيلم"
+  },
+  "label": {
+    "year": "سنة الاصدار"
   }
 }

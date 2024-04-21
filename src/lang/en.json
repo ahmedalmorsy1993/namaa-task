@@ -12,5 +12,14 @@
     "movie_year": "Movie Year",
     "number_of_actors": "Number Of Actors",
     "actions": "Actions"
+  },
+  "heading": {
+    "edit_movie": "Edit Movie",
+    "create_movie": "Create Movie"
+  },
+  "label": {
+    "movie_title": "Movie Title",
+    "movie_description": "Movie Description",
+    "year": "Year"
   }
 }
