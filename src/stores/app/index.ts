@@ -1,24 +1,24 @@
 import { generateTableHeaders } from '@/utils/generateTableHeaders';
 import { defineStore } from 'pinia'
-import { IHeader, IMovie, IState } from './app.types';
+import { IHeader, IState } from './app.types';
 
 export const useAppStore = defineStore('app', {
   state: () => ({
-    movies: [],
+    items: [],
     headers: []
   } as IState),
   actions: {
-    getStoredMovies(): IMovie[] {
-      return localStorage.getItem('movies') ? JSON.parse(localStorage.getItem('movies') as string) : [];
+    getStoredItems(): any[] {
+      return localStorage.getItem('items') ? JSON.parse(localStorage.getItem('items') as string) : [];
     },
-    setMovies() {
-      this.movies = this.getStoredMovies()
+    setItems<T>(itemValues: T[]) {
+      this.items = itemValues || this.getStoredItems()
     },
-    addMovie(movie: IMovie) {
-      this.movies = [...this.movies, movie]
-      const storedMovies = this.getStoredMovies()
-      storedMovies.push(movie)
-      localStorage.setItem('movies', JSON.stringify(storedMovies))
+    addItem<T>(item: T) {
+      this.items = [...this.items, item]
+      const storeItems = this.getStoredItems()
+      storeItems.push(item)
+      localStorage.setItem('items', JSON.stringify(storeItems))
     },
     setHeaders(headers: IHeader[]) {
       this.headers = generateTableHeaders(headers)

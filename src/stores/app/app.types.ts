@@ -7,12 +7,8 @@ export interface IHeader {
   [key: string]: any;
 }
 
-export interface IMovie {
-  title: string;
-  year: number;
-  number_of_actors: number;
-}
+
 export interface IState {
-  movies: IMovie[],
+  items: unknown[],
   headers: IHeader[]
 }

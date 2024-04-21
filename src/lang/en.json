@@ -11,7 +11,11 @@
     "movie_title": "Movie Title",
     "movie_year": "Movie Year",
     "number_of_actors": "Number Of Actors",
-    "actions": "Actions"
+    "actions": "Actions",
+    "name": "Name",
+    "age": "Age",
+    "role": "Role",
+    "join_date": "Join Date"
   },
   "heading": {
     "edit_movie": "Edit Movie",

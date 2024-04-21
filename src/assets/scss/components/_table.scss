@@ -1,0 +1,22 @@
+.v-table {
+  border-radius: 20px !important;
+  overflow: hidden;
+
+  table {
+    thead {
+      th {
+        color: white !important;
+        text-transform: capitalize;
+        font-weight: bold;
+        padding: 20px 30px !important;
+        height: 60px;
+      }
+    }
+    td {
+      padding: 20px 30px !important;
+    }
+  }
+  .v-data-table-rows-no-data {
+    text-align: start !important;
+  }
+}

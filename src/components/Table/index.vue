@@ -1,5 +1,5 @@
 <template>
-  <v-data-table :items="store.movies" :headers="store.headers" v-bind="$attrs" :items-per-page="10">
+  <v-data-table :items="store.items" :headers="store.headers" v-bind="$attrs" :items-per-page="10">
   </v-data-table>
 </template>
 

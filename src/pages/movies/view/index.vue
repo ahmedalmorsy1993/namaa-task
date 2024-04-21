@@ -1,6 +1,6 @@
 <template>
   <div>
-    <MovieFormAction />
+    view
   </div>
 </template>
 

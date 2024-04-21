@@ -1,7 +1,7 @@
 <template>
   <v-container>
     <v-toolbar rounded color="default" class="mb-4">
-      <v-btn to="/add-movie" color="default" size="large" variant="elevated">
+      <v-btn to="/movies/add" color="default" size="large" variant="elevated">
         add Movie
         <v-icon>mdi-plus</v-icon>
       </v-btn>
