@@ -11,6 +11,7 @@ declare module 'vue' {
     AppFooter: typeof import('./components/AppFooter.vue')['default']
     Autocomplete: typeof import('./components/Fields/Autocomplete.vue')['default']
     DatePicker: typeof import('./components/Fields/DatePicker.vue')['default']
+    Dialog: typeof import('./components/Dialog/index.vue')['default']
     FileUpload: typeof import('./components/Fields/FileUpload.vue')['default']
     HelloWorld: typeof import('./components/HelloWorld.vue')['default']
     LangSwitcher: typeof import('./components/AppBar/LangSwitcher.vue')['default']

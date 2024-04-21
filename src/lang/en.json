@@ -24,6 +24,10 @@
   "label": {
     "movie_title": "Movie Title",
     "movie_description": "Movie Description",
-    "year": "Year"
+    "year": "Year",
+    "name": "Name",
+    "age": "Age",
+    "join_date": "Join Date",
+    "role": "Role"
   }
 }

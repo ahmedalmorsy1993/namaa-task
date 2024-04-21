@@ -1,15 +1,6 @@
 <template>
-  <v-select
-    density="compact"
-    rounded
-    transition="fade-transition"
-    eager
-    variant="outlined"
-    v-bind="$attrs"
-    v-model="value"
-    :error-messages="errorMessage"
-    @blur="validateField"
-  >
+  <v-select density="compact" rounded transition="fade-transition" variant="outlined" v-bind="$attrs" v-model="value"
+    :error-messages="errorMessage" @blur="validateField">
     <template #append-inner>
       <slot name="append-inner" />
     </template>
