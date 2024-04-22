@@ -29,6 +29,7 @@
 
           <v-list>
             <template v-for="(actor, index) in movie.actors" :key="index">
+              <v-divider></v-divider>
               <v-list-item>
                 <v-list-item-title class="d-flex align-center justify-space-between ga-12">
                   <span>{{ $t('label.name') }}</span>

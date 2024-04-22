@@ -42,8 +42,11 @@ export const useFormAction = () => {
 
   const onCreate = (value: any) => {
     setTimeout(() => {
-      store.addItem({ ...value, id: uuid.v4() })
+
       router.go(-1)
+      nextTick(() => {
+        store.addItem({ ...value, id: uuid.v4() })
+      })
     }, 1000);
   }
   const onUpdate = (value: any) => {

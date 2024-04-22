@@ -21,7 +21,7 @@
     </v-card>
     <Table>
       <template #item.actors="{ item }">
-        {{ item.actors.length }}
+        {{ item.actors?.length }}
       </template>
       <template #item.actions="{ item }">
         <div class="d-flex align-center ga-2">

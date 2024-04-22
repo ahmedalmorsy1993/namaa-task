@@ -32,10 +32,13 @@ export const useAppStore = defineStore('app', {
       this.updateLocalStorage(this.items)
 
     },
-    updateItem<T>(id: string, value: T) {
-      const index = this.getStoredItems().findIndex((item: { id: string }) => item.id === id);
+    updateItem(id: string, value: any) {
+      const items = this.getStoredItems()
+      const index = items.findIndex((item: { id: string }) => item.id === id);
       if (index !== -1) {
-        this.items[index] = value
+        items[index] = value;
+        this.items = items;
+
         this.updateLocalStorage(this.items);
       }
     },
