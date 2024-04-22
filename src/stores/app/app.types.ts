@@ -9,6 +9,6 @@ export interface IHeader {
 
 
 export interface IState {
-  items: unknown[],
+  items: any[],
   headers: IHeader[]
 }

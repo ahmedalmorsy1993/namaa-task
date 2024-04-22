@@ -17,7 +17,7 @@ const { name } = defineProps({
     default: "",
   },
 });
-const { errorMessage, validateField, setValue } = useFieldGroup(name);
+const { value, errorMessage, validateField, setValue } = useFieldGroup(name);
 const dialog = ref(false);
 const dateValue = ref();
 const onChange = (value: any) => {
@@ -27,5 +27,11 @@ const onChange = (value: any) => {
   setValue(value)
 
 }
+watchEffect(() => {
+  if (value.value) {
+    dateValue.value = value.value
+
+  }
+})
 
 </script>

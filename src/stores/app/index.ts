@@ -1,4 +1,4 @@
-import { generateTableHeaders } from '@/utils/generateTableHeaders';
+import { generateTableHeaders } from '@/helpers/generateTableHeaders';
 import { defineStore } from 'pinia'
 import { IHeader, IState } from './app.types';
 
@@ -8,6 +8,9 @@ export const useAppStore = defineStore('app', {
     headers: []
   } as IState),
   actions: {
+    updateLocalStorage(values: any[]) {
+      localStorage.setItem('items', JSON.stringify(values))
+    },
     getStoredItems(): any[] {
       return localStorage.getItem('items') ? JSON.parse(localStorage.getItem('items') as string) : [];
     },
@@ -18,7 +21,23 @@ export const useAppStore = defineStore('app', {
       this.items = [...this.items, item]
       const storeItems = this.getStoredItems()
       storeItems.push(item)
-      localStorage.setItem('items', JSON.stringify(storeItems))
+      this.updateLocalStorage(storeItems)
+    },
+    getItem(id: string) {
+      const items = this.getStoredItems()
+      return items.find((el: { id: string }) => el.id == id)
+    },
+    removeItem(id: string) {
+      this.items = this.items.filter((el: { id: string }) => el.id !== id)
+      this.updateLocalStorage(this.items)
+
+    },
+    updateItem<T>(id: string, value: T) {
+      const index = this.getStoredItems().findIndex((item: { id: string }) => item.id === id);
+      if (index !== -1) {
+        this.items[index] = value
+        this.updateLocalStorage(this.items);
+      }
     },
     setHeaders(headers: IHeader[]) {
       this.headers = generateTableHeaders(headers)

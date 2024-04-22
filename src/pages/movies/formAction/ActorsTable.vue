@@ -14,7 +14,7 @@
           </td>
           <td>
             <SelectField :label="$t('label.role')" type="number" :name="`actors.${index}.role`" :items="roleItems"
-              item-title="name" item-value="value" />
+              item-title="name" item-value="name" />
           </td>
           <td>
             <div class="d-flex align-center ga-2">
@@ -34,7 +34,7 @@ import { useAppStore } from '@/stores/app';
 import { useFieldArray } from 'vee-validate';
 const { fields, push, remove } = useFieldArray('actors')
 const store = useAppStore()
-store.setItems(fields.value)
+
 store.setHeaders([
   { title: 'name' },
   { title: 'age' },
@@ -45,7 +45,7 @@ store.setHeaders([
 
 
 const roleItems: { name: string; value: string }[] = [
-  { name: 'Background role', value: 'background_role' },
+  { name: 'Background role', value: 'background role' },
   { name: 'Cameo', value: 'cameo' },
   { name: 'Recurring character', value: 'recurring_character' },
   { name: 'Recurring character', value: 'recurring_character' },
@@ -56,6 +56,8 @@ const roleItems: { name: string; value: string }[] = [
     name: 'Series regular', value: 'series_regular'
   },
 ]
+store.setItems(fields.value)
+
 
 const onAddActor = () => {
   push({

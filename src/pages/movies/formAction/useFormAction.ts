@@ -4,6 +4,8 @@ import { useForm } from 'vee-validate'
 import { useI18n } from 'vue-i18n'
 import { useRoute } from 'vue-router'
 import { array, object, string } from 'yup'
+import { uuid } from "vue3-uuid";
+
 export const useFormAction = () => {
   const loading = ref<boolean>(false)
   const router = useRouter()
@@ -12,7 +14,7 @@ export const useFormAction = () => {
   const { id } = route.params
   const title = id ? t('heading.edit_movie') : t('heading.create_movie')
   const store = useAppStore()
-  const { handleSubmit } = useForm({
+  const { handleSubmit, setValues } = useForm({
     validationSchema: toTypedSchema(object({
       title: string().required(),
       year: string().required(),
@@ -35,18 +37,42 @@ export const useFormAction = () => {
         role: ''
       }]
     }
-
   },
   )
 
+  const onCreate = (value: any) => {
+    setTimeout(() => {
+      store.addItem({ ...value, id: uuid.v4() })
+      router.go(-1)
+    }, 1000);
+  }
+  const onUpdate = (value: any) => {
+    store.updateItem(id as string, value)
+    router.go(-1)
+
+  }
   const onSubmit = handleSubmit((value) => {
     loading.value = true
-    setTimeout(() => {
-      store.addItem(value)
-      router.go(-1)
-    }, 3000);
+    if (id) {
+      // in case update
+      onUpdate(value)
+    } else {
+      // in case create
+      onCreate(value)
+    }
+
   })
 
+  const handleShow = () => {
+    if (id) {
+      const showItem = store.getItem(id as string)
+      setValues(showItem)
+
+    }
+  }
+  watchEffect(() => {
+    handleShow()
+  })
   return { title, onSubmit, loading }
 
 }

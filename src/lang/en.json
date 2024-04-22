@@ -28,6 +28,8 @@
     "name": "Name",
     "age": "Age",
     "join_date": "Join Date",
-    "role": "Role"
+    "role": "Role",
+    "actors": "actors",
+    "actors_number": "Actors Number"
   }
 }
