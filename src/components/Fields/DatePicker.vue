@@ -4,7 +4,7 @@
     @focus="dialog = true" readonly></v-text-field>
   <Dialog v-model="dialog">
     <v-card class="mx-auto">
-      <v-date-picker @update:model-value="onChange" v-model="dateValue" class="mx-auto"></v-date-picker>
+      <v-date-picker @update:model-value="onChange" class="mx-auto"></v-date-picker>
     </v-card>
   </Dialog>
 </template>
@@ -21,6 +21,7 @@ const { value, errorMessage, validateField, setValue } = useFieldGroup(name);
 const dialog = ref(false);
 const dateValue = ref();
 const onChange = (value: any) => {
+
   dateValue.value = value
     ? new Date(value as string).toDateString()
     : null;

@@ -70,9 +70,7 @@ export const useFormAction = () => {
 
     }
   }
-  watchEffect(() => {
-    handleShow()
-  })
+  handleShow()
   return { title, onSubmit, loading }
 
 }

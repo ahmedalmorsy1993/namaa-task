@@ -27,8 +27,10 @@ export const useFilter = ({ filterName }: Props) => {
       switch (filterName) {
         case 'title':
           filterByTitle(value);
+          break;
         case 'year':
           filterByYear(value)
+          break;
         case 'actors':
           filterByActorsCount(value)
       }
